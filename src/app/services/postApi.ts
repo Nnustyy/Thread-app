@@ -11,11 +11,10 @@ export const postApi = api.injectEndpoints({
       })
     }),
 
-    deletePost: builder.mutation<void, {id:string}>({
+    deletePost: builder.mutation<void, string>({
       query: (id) => ({
-        url:'/posts',
-        method:'DELETE',
-        body:id
+        url:`/posts/${id}`,
+        method:'DELETE'
       })
     }),
 
@@ -26,7 +25,7 @@ export const postApi = api.injectEndpoints({
       })
     }),
 
-    getPostById: builder.query<Post, {id:string}>({
+    getPostById: builder.query<Post, string>({
       query: (id) => ({
         url:`/posts/${id}`,
         method:'GET'
