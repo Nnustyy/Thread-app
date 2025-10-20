@@ -13,7 +13,7 @@ import Followers from './pages/followers/index.tsx'
 import CurrentPost from './pages/current-post/index.tsx'
 import UserProfile from './pages/user-profile/index.tsx'
 
-const routes = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path:'/auth',
     element:<Auth/>
@@ -51,7 +51,7 @@ createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
       <HeroUIProvider>
       <RouterProvider
-      router={routes}
+      router={router}
       />
       </HeroUIProvider>
     </Provider>
